@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GrBay'nın Sayfasına Hoşgeldiniz</title>
 <style>
   body {
@@ -13,19 +13,16 @@
     line-height: 1.6;
     transition: background 0.5s ease;
   }
-  a {
-    color: #4fc3f7;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
+
+  a { color: #fff; text-decoration: none; }
+  a:hover { text-decoration: underline; }
 
   .container {
     max-width: 900px;
-    margin: 50px auto 80px;
+    margin: 50px auto;
     padding: 0 20px;
   }
+
   h1 {
     font-size: 3rem;
     text-align: center;
@@ -41,6 +38,7 @@
     font-weight: 300;
     letter-spacing: 1px;
   }
+
   .btn-contact {
     display: block;
     width: 160px;
@@ -60,6 +58,7 @@
     background: linear-gradient(45deg, #0091ea, #111111);
     box-shadow: 0 6px 20px rgba(0, 145, 234, 0.8);
   }
+
   section {
     background: #111;
     border-radius: 15px;
@@ -72,6 +71,7 @@
     transform: translateY(-6px);
     box-shadow: 0 12px 30px rgba(0, 191, 255, 0.6);
   }
+
   section h2 {
     margin-top: 0;
     margin-bottom: 15px;
@@ -79,15 +79,14 @@
     font-weight: 800;
     border-bottom: 3px solid #00bfff;
     padding-bottom: 8px;
-    color: #fff;
   }
+
   section p {
     font-size: 1rem;
     color: #ccc;
     white-space: pre-line;
   }
 
-  /* Accordion */
   .accordion {
     background-color: #222;
     color: #4fc3f7;
@@ -120,7 +119,6 @@
     margin-bottom: 15px;
   }
 
-  /* Bana Ulaş */
   .discord {
     display: flex;
     align-items: center;
@@ -128,21 +126,8 @@
     margin-top: 15px;
     margin-bottom: 10px;
   }
-  .discord img {
-    width: 48px;
-    height: 48px;
-  }
-  .discord p {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #4fc3f7;
-  }
-  .discord-info {
-    font-size: 0.95rem;
-    color: #aaa;
-    margin-top: 6px;
-    margin-left: 63px;
-  }
+  .discord img { width: 48px; height: 48px; }
+  .discord-info { font-size: 0.95rem; color: #aaa; margin-left: 63px; margin-top: 6px; }
 
   footer {
     text-align: center;
@@ -165,97 +150,27 @@
   }
 
   @media (max-width: 600px) {
-    h1 {
-      font-size: 2rem;
-    }
-    section {
-      padding: 20px;
-      margin-bottom: 30px;
-    }
-    .btn-contact {
-      width: 100%;
-    }
-    .discord {
-      flex-direction: column;
-      gap: 5px;
-      align-items: flex-start;
-    }
-    .discord-info {
-      margin-left: 0;
-    }
+    h1 { font-size: 2rem; }
+    section { padding: 20px; margin-bottom: 30px; }
+    .btn-contact { width: 100%; }
+    .discord { flex-direction: column; gap: 5px; align-items: flex-start; }
+    .discord-info { margin-left: 0; }
   }
 </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>Baba'nın Sayfasına Hoşgeldiniz</h1>
+  <!-- BAŞLIK -->
+  <h1>GrBay'nın Sayfasına Hoşgeldiniz</h1>
   <p class="subtitle">burası benim sitem kendi yapdiklarim ve sahsiyetim</p>
 
   <button class="btn-contact" onclick="document.getElementById('iletisim').scrollIntoView({behavior:'smooth'})">
     İletişime Geç
   </button>
 
+  <!-- HAKKIMDA -->
   <section>
     <h2>Hakkımda</h2>
-    <p>Merhaba! Ben Baba Namıdeğer Grbay, siber güvenlikçiyim. İcratta olmasa da pratikte ve teoride siber güvenlikçi olarak çalışıyorum ve Grey Hat’im. Lua, Python, C# gibi dilleri biliyorum.</p>
-  </section>
-
-  <section>
-    <h2>Misyonumuz</h2>
-    <p>
-      Misyonumuz, Türk kültürünü dünyaya duyurmak, milli değerlerimizi korumak ve Türkiye’yi her daim başı dik, güçlü ve No.1 göstermek ve ayrıca savunmaktır.<br><br>
-      Sanal dünyada yenilikçi projelerle kültürel gücümüzü, mizahi yönümüzü, ileri görüşlülüğümüzü ve mirasımızı geleceğe taşımak; yeni kuşaklara milli şuuru aşılamak ve dünya üzerinde ülkemizin sesini duyurmak amacıyla buradayız.<br><br>
-      Bu yolda birlik ve beraberlik ruhuyla, tarihimizden ilham alarak modern dünyada sesimizi duyuruyor ve teknolojileri kullanıyoruz. Türkiye’yi ve Azerbaycan’ı siber saldırılardan korumaya çalışıyoruz.
-    </p>
-  </section>
-
-  <section id="iletisim">
-    <h2>Bana Ulaş</h2>
-    <div class="discord">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Logo" />
-      <p>Discord: <strong>nalakliakka (Baba)</strong></p>
-    </div>
-    <p class="discord-info">Bana Discord'dan <strong>nalakliakka</strong> kullanıcı adıyla ulaşabilirsiniz veya iletişim bölümünden iletişime geçebilirsiniz.</p>
-  </section>
-
-  <section>
-    <h2>Sorular</h2>
-
-    <button class="accordion">Piyasaya ne zaman geldin?</button>
-    <div class="panel">
-      <p>Grbay, piyasaya 2020 yılının ortalarında başlamıştır.</p>
-    </div>
-
-    <button class="accordion">Nasıl iletişime geçerim?</button>
-    <div class="panel">
-      <p>İletişime geç butonuna basarak iletişime geçebilirsiniz veya Discord üzerinden nalakliakka'ya (Baba) mesaj gönderebilirsiniz.</p>
-    </div>
-  </section>
-</div>
-
-<footer>
-  <span class="copyright-circle">©</span> 2026 GrBay. Tüm Hakları Saklıdır.
-</footer>
-
-<script>
-  // Accordion functionality
-  const acc = document.querySelectorAll(".accordion");
-  acc.forEach(button => {
-    button.addEventListener("click", () => {
-      button.classList.toggle("active");
-      const panel = button.nextElementSibling;
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
-      } else {
-        panel.style.display = "block";
-      }
-    });
-  });
-</script>
-
-</body>
-</html>
-
-
+    <p>Merhaba!, Ben GrBay Namıdeğer, siber güvenl
 
