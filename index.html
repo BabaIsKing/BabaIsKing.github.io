@@ -1,117 +1,269 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Baba'nın Sayfasına Hoşgeldiniz</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GrBay'nın Sayfasına Hoşgeldiniz</title>
 <style>
-  /* GENEL AYARLAR */
+  /* Genel */
   body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #000428, #004e92);
-    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #000000, #001f4d);
+    color: #eee;
     line-height: 1.6;
+    transition: background 0.5s ease;
   }
-  a { color: #fff; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  /* KONTEYNER */
+  a {
+    color: #4fc3f7;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
   .container {
     max-width: 900px;
-    margin: auto;
-    padding: 40px 20px;
+    margin: 50px auto 80px;
+    padding: 0 20px;
+  }
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: 900;
+  }
+  p.subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #bbb;
+    margin-bottom: 30px;
+    text-transform: lowercase;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  /* İletişime Geç Butonu */
+  .btn-contact {
+    display: block;
+    width: 160px;
+    margin: 0 auto 50px auto;
+    padding: 12px 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #00bfff, #000000);
+    box-shadow: 0 4px 15px rgba(0, 191, 255, 0.6);
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+  }
+  .btn-contact:hover {
+    background: linear-gradient(45deg, #0091ea, #111111);
+    box-shadow: 0 6px 20px rgba(0, 145, 234, 0.8);
   }
 
-  /* BAŞLIKLAR */
-  h1 { font-size: 3em; margin-bottom: 10px; text-align: center; }
-  h2 { font-size: 1.5em; margin-top: 40px; margin-bottom: 10px; border-bottom: 1px solid #fff; padding-bottom: 5px; }
-  p.subtitle { font-size: 1em; color: #ccc; text-align: center; margin-bottom: 30px; }
+  /* Bölümler */
+  section {
+    background: #111;
+    border-radius: 15px;
+    padding: 25px 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  section:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 191, 255, 0.6);
+  }
 
-  /* BÖLÜMLER */
-  section { margin-bottom: 50px; }
+  section h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    border-bottom: 3px solid #00bfff;
+    padding-bottom: 8px;
+  }
+  section p {
+    font-size: 1rem;
+    color: #ccc;
+    white-space: pre-line;
+  }
 
-  /* ACCORDION */
-  .accordion { background-color: #111; color: #fff; cursor: pointer; padding: 15px; width: 100%; text-align: left; border: none; outline: none; font-size: 1em; transition: 0.4s; margin-bottom: 5px; }
-  .accordion:hover { background-color: #222; }
-  .panel { padding: 0 15px; display: none; background-color: #111; overflow: hidden; }
+  /* Bana Ulaş */
+  .discord {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  .discord img {
+    width: 48px;
+    height: 48px;
+  }
+  .discord p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4fc3f7;
+  }
+  .discord-info {
+    font-size: 0.95rem;
+    color: #aaa;
+    margin-top: 6px;
+    margin-left: 63px;
+  }
 
-  /* DISCORD */
-  .discord { display: flex; align-items: center; margin-top: 20px; }
-  .discord img { width: 40px; height: 40px; margin-right: 10px; }
-  .discord p { margin: 0; }
+  /* Accordion */
+  .accordion {
+    background-color: #222;
+    color: #4fc3f7;
+    cursor: pointer;
+    padding: 15px 25px;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: left;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 191, 255, 0.4);
+    margin-bottom: 10px;
+  }
+  .accordion:hover, .accordion.active {
+    background-color: #0091ea;
+    color: #fff;
+  }
+  .panel {
+    padding: 15px 25px;
+    background-color: #111;
+    color: #ccc;
+    border-radius: 0 0 15px 15px;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.6);
+    display: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
 
-  /* FOOTER */
-  footer { text-align: center; padding: 20px; border-top: 1px solid #fff; border-radius: 50%; }
-  footer span { display: inline-block; width: 30px; height: 30px; border: 1px solid #fff; border-radius: 50%; line-height: 30px; text-align: center; margin-right: 10px; }
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #777;
+    border-top: 1px solid #222;
+    margin-top: 40px;
+  }
+  footer span.copyright-circle {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border: 1.8px solid #777;
+    border-radius: 50%;
+    margin-right: 8px;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2rem;
+    }
+    section {
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    .btn-contact {
+      width: 100%;
+    }
+    .discord {
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-start;
+    }
+    .discord-info {
+      margin-left: 0;
+    }
+  }
 </style>
 </head>
 <body>
-
 <div class="container">
-  <!-- BAŞLIK -->
   <h1>Baba'nın Sayfasına Hoşgeldiniz</h1>
-  <p class="subtitle">burası benim sitem kendi yapdiklarim ve sahsiyetim</p>
-  <p class="subtitle">iletişime geç</p>
+  <p class="subtitle">burası benim sitem kendi yaptıklarım ve şahsiyetim</p>
 
-  <!-- HAKKIMDA -->
+  <button class="btn-contact" onclick="document.getElementById('iletisim').scrollIntoView({behavior:'smooth'})">
+    İletişime Geç
+  </button>
+
   <section>
     <h2>Hakkımda</h2>
-    <p>Merhaba!, Ben Baba Namıdeger Grbay, siber guvenlikciyim icrattim olmasada pratikde ve teoride siber guvenlikciyim ve Grey hat'im. lua, python, C# gibi dilleri biliyorum.</p>
+    <p>
+      Merhaba! Ben Baba Namıdeğer Grbay. Siber güvenlik uzmanıyım. Red team olarak saldırı, blue team olarak savunma çalışmaları yapıyorum.<br><br>
+      Html, C#, CSS, LUA, phyton gibi dilleri biliyorum ve siyah şapkalı hacker olarak çalışıyorum.
+    </p>
   </section>
 
-  <!-- MİSYON -->
   <section>
     <h2>Misyonumuz</h2>
-    <p>Misyonumuz, Turk ve Azeri kulturunu dunyaya duyurmak ispat etmek ve aşılamak, milli degerlerimizi korumak Turkyeyi ve azerbaycani her daim basi dik, guclu, ve NO1 gostermekdir ve ayrica savunmakdir. Sanal dunyada yenilikci projelerle Kulturel gucumuzu, Mizahi yonden ileri goruslukden ve ayrica mirasimizi gelecege tasimakdir, yeni kuşaga milli şuuru aşılamak ve dunya uzerinde ulkemizin halki sesimizi amaciyla burdayiz, bu yolda, birlik ve beraberlik ruhuyla tarihimizden ilham alarak modern dunyada sesimi duyuruyoruz ve teknolojilerini kullaniyoruz Ve Turkye'yi ve Azerbaycani Siber saldirilardan korumaya calisiyoruz.</p>
+    <p>
+      Misyonumuz, Türk kültürünü dünyaya duyurmak, milli değerlerimizi korumak ve Türkiye’yi her zaman güçlü, başı dik, bir numara olarak göstermek ve savunmaktır.
+Sanal dünyada yenilikçi projelerle kültürel gücümüzü, mizahi yönümüzü ve ileri görüşlülüğümüzü geleceğe taşımak, yeni nesillere milli şuuru aşılamak ve dünyada ülkemizin sesini duyurmak amacıyla buradayız.
+Bu yolda birlik ve beraberlik ruhuyla, tarihimizden ilham alarak modern dünyada sesimizi duyuruyor ve teknolojileri kullanıyoruz.
+Ayrıca Türkiye’yi ve Azerbaycan’ı siber saldırılardan korumaya çalışıyoruz.
+    </p>
   </section>
 
-  <!-- İLETİŞİM -->
-  <section>
+  <section id="iletisim">
     <h2>Bana Ulaş</h2>
     <div class="discord">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Logo">
-      <p>Discord: nalakliakka (Baba)</p>
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Logo" />
+      <p>Discord: <strong>nalakliakka (Baba)</strong></p>
     </div>
-    <p>bana Discord'dan nalakliakka useri ile ulasa bilirsiniz veya iletisim yerinden ulasa bilirsiniz.</p>
+    <p class="discord-info">
+      Bana Discord'dan <strong>nalakliakka</strong> kullanıcı adıyla ulaşabilirsiniz veya iletişim bölümünden iletişime geçebilirsiniz.
+    </p>
   </section>
 
-  <!-- SORULAR (ACCORDION) -->
   <section>
     <h2>Sorular</h2>
+
     <button class="accordion">Piyasaya ne zaman geldin?</button>
     <div class="panel">
-      <p>Grbay, piyasaya 2020 yilinin otak ayinda baslamisdir.</p>
+      <p>Grbay, piyasaya 2020 yılının ortalarında başlamıştır.</p>
     </div>
 
     <button class="accordion">Nasıl iletişime geçerim?</button>
     <div class="panel">
-      <p>İletişime geç butonuna basarak iletisime gece bilirsiniz veya Discord üzerinden nalakliakka'ya yaza bilirsiniz.</p>
+      <p>İletişime geç butonuna basarak iletişime geçebilirsiniz veya Discord üzerinden nalakliakka'ya (GrBay) mesaj gönderebilirsiniz.</p>
     </div>
   </section>
 </div>
 
-<!-- FOOTER -->
 <footer>
-  <span>©</span> 2026 GrBay. Tüm Hakları Saklıdır.
+  <span class="copyright-circle">©</span> 2026 GrBay. Tüm Hakları Saklıdır.
 </footer>
 
 <script>
-  // ACCORDION KODU
-  var acc = document.getElementsByClassName("accordion");
-  for (var i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
+  // Accordion fonksiyonu
+  const acc = document.querySelectorAll(".accordion");
+  acc.forEach(button => {
+    button.addEventListener("click", () => {
+      button.classList.toggle("active");
+      const panel = button.nextElementSibling;
       if (panel.style.display === "block") {
         panel.style.display = "none";
       } else {
         panel.style.display = "block";
       }
     });
-  }
+  });
 </script>
-
 </body>
 </html>
+
 
