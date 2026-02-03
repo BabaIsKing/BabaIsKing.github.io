@@ -6,29 +6,33 @@
 <title>GrBay'nın Sayfasına Hoşgeldiniz</title>
 <style>
   /* GENEL AYARLAR */
+  * { box-sizing: border-box; }
   body {
     margin: 0;
+    min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #000000, #001f4d);
     color: #eee;
     line-height: 1.6;
     transition: background 0.5s ease;
   }
+
   a { color: #fff; text-decoration: none; }
   a:hover { text-decoration: underline; }
 
   .container {
     max-width: 900px;
-    margin: 50px auto;
+    margin: 20px auto;
     padding: 0 20px;
   }
 
   h1 {
     font-size: 3rem;
     text-align: center;
-    margin-bottom: 5px;
+    margin: 0 0 5px 0;
     font-weight: 900;
   }
+
   p.subtitle {
     text-align: center;
     font-size: 1.1rem;
@@ -86,12 +90,6 @@
     font-size: 1rem;
     color: #ccc;
     white-space: pre-line;
-  }
-
-  /* Hakkımda hover efekti */
-  #hakkimda:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 191, 255, 0.6);
   }
 
   ul { padding-left: 20px; }
@@ -167,7 +165,7 @@
     section { padding: 20px; margin-bottom: 30px; }
     .btn-contact { width: 100%; }
     .discord { flex-direction: column; gap: 5px; align-items: flex-start; }
-    .discord-info { margin-left: 0; }
+    .discord-info { margin-left: 0; margin-top: 5px; }
   }
 </style>
 </head>
@@ -246,6 +244,7 @@
 
 </body>
 </html>
+
 
 
 
