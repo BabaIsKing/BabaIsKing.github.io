@@ -149,6 +149,12 @@
     vertical-align: middle;
   }
 
+  /* Hakkımda hover animasyonu */
+  #hakkimda:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 191, 255, 0.6);
+  }
+
   @media (max-width: 600px) {
     h1 { font-size: 2rem; }
     section { padding: 20px; margin-bottom: 30px; }
@@ -161,7 +167,6 @@
 <body>
 
 <div class="container">
-  <!-- BAŞLIK -->
   <h1>GrBay'nın Sayfasına Hoşgeldiniz</h1>
   <p class="subtitle">burası benim sitem kendi yapdiklarim ve sahsiyetim</p>
 
@@ -170,7 +175,67 @@
   </button>
 
   <!-- HAKKIMDA -->
-  <section>
+  <section id="hakkimda">
     <h2>Hakkımda</h2>
-    <p>Merhaba!, Ben GrBay Namıdeğer, siber güvenl
+    <p>Merhaba! Ben GrBay Namıdeğer, siber güvenlikçi ve Grey hat'im. Pratikte ve teoride siber güvenlik alanında çalışıyorum.</p>
+    <p>Bildiğim diller:</p>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>C#</li>
+      <li>Lua</li>
+    </ul>
+  </section>
+
+  <!-- MİSYON -->
+  <section>
+    <h2>Misyonumuz</h2>
+    <p>Misyonumuz, Türk ve Azeri kültürünü dünyaya duyurmak, milli değerlerimizi korumak ve Türkiye’yi her platformda güçlü bir şekilde savunmaktır.<br><br>
+    Sanal dünyada yenilikçi projelerle kültürel gücümüzü, mizahi yönümüzü ve mirasımızı geleceğe taşımak, yeni nesillere milli şuuru aşılamak ve uluslararası alanda ülkemizin sesini duyurmak amacıyla buradayız.<br><br>
+    Bu yolda birlik ve beraberlik ruhuyla, tarihimizden ilham alarak modern teknolojileri kullanıyor ve Türkiye’yi ve Azerbaycan’ı siber saldırılardan korumaya çalışıyoruz.</p>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section id="iletisim">
+    <h2>Bana Ulaş</h2>
+    <div class="discord">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Logo">
+      <p>Discord: <strong>nalakliakka (GrBay)</strong></p>
+    </div>
+    <p class="discord-info">Bana Discord'dan <strong>nalakliakka</strong> kullanıcı adıyla ulaşabilirsiniz veya iletişim bölümünden iletişime geçebilirsiniz.</p>
+  </section>
+
+  <!-- SORULAR -->
+  <section>
+    <h2>Sorular</h2>
+    <button class="accordion">Piyasaya ne zaman geldin?</button>
+    <div class="panel">
+      <p>GrBay, piyasaya 2020 yılının ortalarında başlamıştır.</p>
+    </div>
+
+    <button class="accordion">Nasıl iletişime geçerim?</button>
+    <div class="panel">
+      <p>İletişime geç butonuna basarak iletişime geçebilirsiniz veya Discord üzerinden nalakliakka'ya (GrBay) mesaj gönderebilirsiniz.</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <span class="copyright-circle">©</span> 2026 GrBay. Tüm Hakları Saklıdır.
+</footer>
+
+<script>
+  const acc = document.querySelectorAll(".accordion");
+  acc.forEach(button => {
+    button.addEventListener("click", () => {
+      button.classList.toggle("active");
+      const panel = button.nextElementSibling;
+      panel.style.display = (panel.style.display === "block") ? "none" : "block";
+    });
+  });
+</script>
+
+</body>
+</html>
+
 
